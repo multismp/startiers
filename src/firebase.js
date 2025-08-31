@@ -1,10 +1,9 @@
-// src/firebase.js
+// src/firebase.ts
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics"; // ❌ raus
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Deine Firebase-Konfiguration
 const firebaseConfig = {
   apiKey: "AIzaSyBBn-dkLQ8UwFEjPA8XVsoWJv1ju2Uy9UI",
   authDomain: "starttiers.firebaseapp.com",
@@ -15,11 +14,10 @@ const firebaseConfig = {
   measurementId: "G-0LLEMSLMGV"
 };
 
-// Firebase initialisieren
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-// Services exportieren
+// const analytics = getAnalytics(app); // ❌ raus
+
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export default app;
